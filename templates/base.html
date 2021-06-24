@@ -1,0 +1,62 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'index' %}"><img <img style="width: 120px; height: 80px;"
+alt="Image description"src="{% static 'images/logo1.png'%}"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page"href="{% url 'index' %}"><h4>Home</a></h4>
+        <a class="nav-link" href="{% url 'todolist' %}"><h4> TodoList </a></h4>
+        <a class="nav-link" href="{% url 'contact' %}"><h4>Contact us</a></h4>
+        <a class="nav-link" href="{% url 'about' %}"><h4>About</a></h4>
+              </div>
+    </div>
+  </div>
+
+  {% if user.is_authenticated %}
+
+   <div class="form-inline my-2 my-lg-0">
+        <div class = "p-2 bg-dark text-white">Logged in as {{ user.username }}</div> 
+        <a href="{% url 'logout' %}">  
+        <button class="btn btn-outline-success class=class=btn btn-info mr-2 my-2 my-sm-0 " type="submit" > LOGOUT </button>
+        </a>
+        </div>
+    
+  {% else %}
+  <a href="{% url 'login' %}"> 
+   <button class="btn btn-outline-success class=class=btn btn-info type=submit " > LOGIN </button></a>
+   <a href="{% url 'register' %}"> 
+
+   <button class="btn btn-outline-success class=class=btn btn-info type=submit" > REGISTER </button></a>
+
+  {% endif %}
+   
+   </div>
+    
+</nav>
+<body class = "bg-light">
+
+<!doctype html>
+<html lang="en">
+  <head>
+  
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/gif" sizes = "16x16">
+        {% block title %} {% endblock  %}
+    
+ {% block content %}
+  {% endblock content %}
+
+  </body>
+</html>
+  </div>

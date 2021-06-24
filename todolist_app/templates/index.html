@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block title %}
+   <title> This is index page </title>
+   </br>
+   </br>
+
+    {% endblock title %}
+
+    
+  {% block content %}
+  <div class = "container">
+
+  <div class = "row mt-5">
+  <div class = "col-lg-4">
+  <img src="{% static 'images/sticky.notes.jpg'%}" alt="Notes"class="rounded-lg shadow-lg " width="300" height ="180">
+
+  </div>
+   <div class = "col-lg-4">
+<img src="{% static 'images/sticky.notes.jpg'%}"  alt="Notes" class="rounded-lg shadow-lg " width="300" height ="180">
+  </div>
+   <div class = "col-lg-4">
+<img src="{% static 'images/sticky.notes.jpg'%}"  alt="Notes" class="rounded-lg shadow-lg " width="300" height ="180">
+  </div>
+  
+  </div>
+  <div class = "row mt-3">
+  <div class="col-md-10 offset-md-1">
+  <center><p class = "h1 text-primary"> Quick and easy to use , Anytime , Anywhere!</p></center>
+  <center><p class = "h2 mt-3"> "Plan your day better , keep your life organized"</p></center>
+  <center><p class = "h5 mt-3 text-warning"> "Taskmate lets you keep Track of your task in one place"</p></center>
+              </div>
+              </div>
+
+              <div class="d-grid gap-2">
+              
+          
+   <center><a class="nav-link" href="{% url 'todolist' %}"><button class="btn btn-primary btn-lg mt-3 rounded-lg shadow-sm">Welcome to Taskmate</button></a></center>
+</div>
+  {% endblock content %}
