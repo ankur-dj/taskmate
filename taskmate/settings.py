@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import environ
 import os
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -130,6 +131,7 @@ CRISPY_TEMPLATE_PACK= 'bootstrap4'
 LOGIN_REDIRECT_URL = "todolist"
 
 LOGIN_URL = "login"
+django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
